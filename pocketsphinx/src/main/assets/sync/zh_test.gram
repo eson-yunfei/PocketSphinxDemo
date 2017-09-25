@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+grammar test;
+
+<name> =
+ 张三 |
+ 李四 |
+ 王五 |
+ 孙六  ;
+
+public <test> = <name>+;

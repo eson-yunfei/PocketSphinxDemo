@@ -1,0 +1,10 @@
+voice.dic
+zh-ptm/feat.params
+zh-ptm/mdef
+zh-ptm/means
+zh-ptm/mixture_weights
+zh-ptm/noisedict
+zh-ptm/sendump
+zh-ptm/transition_matrices
+zh-ptm/variances
+zh_test.gram
