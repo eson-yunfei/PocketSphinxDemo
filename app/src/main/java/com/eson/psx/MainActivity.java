@@ -1,8 +1,11 @@
 package com.eson.psx;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.List;
 
@@ -35,7 +38,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        new Handler(Looper.getMainLooper())
+                .postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        forTest();
+                    }
+                },5_000);
+
+    }
+
+    void forTest(){
         pocketSphinxUtil = PocketSphinxUtil.get();
+        if (pocketSphinxUtil == null){
+            return;
+        }
 
         pocketSphinxUtil.runRecognizerSetup(new RecognizerSetupListener() {
             @Override
@@ -59,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        pocketSphinxUtil.startRecord("", new PocketListener() {
+        pocketSphinxUtil.startRecord("zh_test", new PocketListener() {
             @Override
             public void onSpeechStart() {
 
@@ -67,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onSpeechResult(List<String> strings) {
+                Log.d("MainActivity","find result =" + strings);
+                if (strings == null){
+                    return;
+                }
+                for (String string : strings) {
+                    Log.d("MainActivity","find string =" + string);
+                }
+
 
             }
 
@@ -76,4 +102,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
