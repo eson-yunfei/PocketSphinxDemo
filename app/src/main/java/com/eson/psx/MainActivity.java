@@ -3,9 +3,10 @@ package com.eson.psx;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         serviceIntent = new Intent();
         serviceIntent.setClass(this, PocketSphinxService.class);
         startService(serviceIntent);
