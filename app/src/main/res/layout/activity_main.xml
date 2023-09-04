@@ -5,11 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     tools:context="com.eson.psx.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="30dp"
+        android:id="@+id/request_permission"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="申请权限" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="20dp"
+        android:id="@+id/start_service"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="启动服务" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="20dp"
+        android:id="@+id/start_record"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="开始录音" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="20dp"
+        android:id="@+id/stop_record"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="结束录音" />
 
 </LinearLayout>
